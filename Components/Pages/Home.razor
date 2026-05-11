@@ -2,23 +2,30 @@
 @rendermode InteractiveServer
 <PageTitle>Home</PageTitle>
 
-<h1>Bind use</h1>
-<input @bind="name" placeholder="Enter your name"/>
-<button @onclick="greet">Enter</button>
-<p>@message</p>
+<h1>To do list</h1>
+<input @bind="newTask" placeholder="Enter task..."/>
+<button @onclick="AddTask">Addtask</button>
+<ul>
+    @foreach(var task in tasks)
+    {
+        <li>@task <button @onclick="()=>DeleteTask(task)">Delete</button></li>
+    }
+</ul>
 
 @code{
-    string name="";
-    string message="";
-    void greet()
-    { 
-        if(string.IsNullOrWhiteSpace(name)) 
+   string newTask="";
+   List<string> tasks=new();
+   void AddTask()
+   {
+        if(!string.IsNullOrWhiteSpace(newTask))
         {
-            message="Please Enter a name";
+            tasks.Add(newTask);
+            newTask="";
         }
-        else{
-            message=$"Hello {name}";
-        }
-        
-    }
+   }
+
+   void DeleteTask(string task)
+   {
+    tasks.Remove(task);
+   }
 }
