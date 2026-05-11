@@ -2,12 +2,23 @@
 @rendermode InteractiveServer
 <PageTitle>Home</PageTitle>
 
-<h1>Counter App</h1>
-<p>Count:@count </p>
-<button @onclick="increase">Click</button>
-<button @onclick="reset">Reset</button>
+<h1>Bind use</h1>
+<input @bind="name" placeholder="Enter your name"/>
+<button @onclick="greet">Enter</button>
+<p>@message</p>
+
 @code{
-    int count=0;
-    void increase(){ count++;}
-    void reset(){count=0;}
+    string name="";
+    string message="";
+    void greet()
+    { 
+        if(string.IsNullOrWhiteSpace(name)) 
+        {
+            message="Please Enter a name";
+        }
+        else{
+            message=$"Hello {name}";
+        }
+        
+    }
 }
