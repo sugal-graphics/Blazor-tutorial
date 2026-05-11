@@ -1,8 +1,13 @@
 ﻿@page "/"
-
+@rendermode InteractiveServer
 <PageTitle>Home</PageTitle>
 
-<h1>@name</h1>
+<h1>Counter App</h1>
+<p>Count:@count </p>
+<button @onclick="increase">Click</button>
+<button @onclick="reset">Reset</button>
 @code{
-    string name="UPSA";
+    int count=0;
+    void increase(){ count++;}
+    void reset(){count=0;}
 }

@@ -83,3 +83,4 @@
 /Users/sugaldarlami/Blazor/MyApp/obj/Debug/net10.0/MyApp.pdb
 /Users/sugaldarlami/Blazor/MyApp/obj/Debug/net10.0/MyApp.genruntimeconfig.cache
 /Users/sugaldarlami/Blazor/MyApp/obj/Debug/net10.0/ref/MyApp.dll
+/Users/sugaldarlami/Blazor/MyApp/obj/Debug/net10.0/MyApp.sourcelink.json
